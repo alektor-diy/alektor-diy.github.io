@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -8,50 +7,51 @@
   <title>アレくとーる | A'sKey Hub</title>
 
   <meta name="description" content="日本語配列ユーザー向けの自作キーボードを設計・頒布しています。">
-  <meta name="theme-color" content="#D9A441">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="アレくとーる | A'sKey Hub">
-  <meta property="og:description" content="日本語配列ユーザー向けの自作キーボードを設計・頒布しています。">
+  <meta name="theme-color" content="#FFD000">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+
     :root {
       --bg: #fafaf8;
       --text: #222222;
       --muted: #666666;
-      --border: #e6e6e6;
-      --accent: #d9a441;
-      --accent-hover: #c6912d;
-      --card: #ffffff;
-      --radius: 16px;
+      --border: #e7e7e7;
+
+      --accent: #FFD000;
+      --accent-hover: #E6BB00;
+
+      --radius: 14px;
     }
 
     * {
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
       background: var(--bg);
       color: var(--text);
+
       font-family: "IBM Plex Sans JP", sans-serif;
-      line-height: 1.8;
+
       -webkit-font-smoothing: antialiased;
+      line-height: 1.8;
     }
 
     main {
-      width: 100%;
-      max-width: 720px;
+      max-width: 480px;
+
       margin: 0 auto;
-      padding: 48px 24px 80px;
+
+      padding:
+        48px
+        24px
+        72px;
     }
 
     .hero {
@@ -59,54 +59,63 @@
     }
 
     .avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+
       display: block;
-      margin: 0 auto 24px;
+
+      margin: 0 auto 20px;
+
+      border-radius: 50%;
     }
 
     h1 {
       margin: 0;
+
       font-size: 2rem;
       font-weight: 700;
       line-height: 1.2;
     }
 
     .tagline {
-      margin-top: 20px;
+      margin-top: 16px;
+
       color: var(--muted);
       font-size: 1rem;
     }
 
-    .brand-logo {
-      width: 220px;
-      max-width: 80%;
-      display: block;
-      margin: 32px auto;
-    }
+    .links {
+      margin-top: 32px;
 
-    .cta-group {
       display: flex;
       flex-direction: column;
+
       gap: 12px;
-      margin-top: 32px;
     }
 
-    .button {
+    .button,
+    .link-button {
       display: block;
+
       width: 100%;
+
       text-align: center;
+
       text-decoration: none;
-      padding: 14px 20px;
-      border-radius: 14px;
+
+      border-radius: var(--radius);
+
+      padding: 15px 20px;
+
+      transition: .2s ease;
+
       font-weight: 600;
-      transition: 0.2s ease;
     }
 
     .button-primary {
       background: var(--accent);
-      color: white;
+      color: #222222;
+      padding: 18px 20px;
     }
 
     .button-primary:hover {
@@ -114,67 +123,61 @@
     }
 
     .button-secondary {
-      border: 1px solid var(--border);
+      background: transparent;
+
+      border: 1px solid var(--accent);
+
       color: var(--text);
-      background: white;
     }
 
     .button-secondary:hover {
-      border-color: var(--accent);
+      background: rgba(255, 208, 0, .08);
     }
 
-    .divider {
-      margin: 48px 0;
-      border: none;
-      border-top: 1px solid var(--border);
-    }
-
-    .statement {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .link-card {
-      display: block;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 16px 20px;
-      text-decoration: none;
+    .link-button {
       color: var(--text);
-      font-weight: 500;
-      transition: 0.2s ease;
+
+      background: white;
+
+      border: 1px solid var(--border);
     }
 
-    .link-card:hover {
+    .link-button:hover {
       border-color: var(--accent);
-      transform: translateY(-1px);
+    }
+
+    .brand {
+      margin-top: 40px;
+
+      text-align: center;
+    }
+
+    .brand img {
+      width: 80px;
+
+      opacity: .75;
+    }
+
+    .brand p {
+      margin-top: 12px;
+
+      color: var(--muted);
+
+      font-size: .95rem;
+
+      line-height: 1.8;
     }
 
     footer {
-      margin-top: 48px;
+      margin-top: 16px;
+
       text-align: center;
+
       color: var(--muted);
-      font-size: 0.875rem;
-      padding-bottom: 24px;
+
+      font-size: .85rem;
     }
 
-    @media (min-width: 640px) {
-      .cta-group {
-        flex-direction: row;
-      }
-
-      .button {
-        flex: 1;
-      }
-    }
   </style>
 
 </head>
@@ -185,90 +188,69 @@
 
   <section class="hero">
 
-```
-<img
-  src="assets/avatar.png"
-  alt="アレくとーる アイコン"
-  class="avatar">
+    <img
+      src="assets/avatar.png"
+      alt="アレくとーる"
+      class="avatar">
 
-<h1>アレくとーる</h1>
+    <h1>アレくとーる@A'sKey</h1>
 
-<p class="tagline">
-  日本語配列ユーザー向けの<br>
-  自作キーボードを設計・頒布しています。
-</p>
-
-<img
-  src="assets/logo.png"
-  alt="A'sKey"
-  class="brand-logo">
-
-<div class="cta-group">
-
-  <a
-    class="button button-primary"
-    href="https://alektor.booth.pm/"
-    target="_blank"
-    rel="noopener noreferrer">
-    BOOTH
-  </a>
-
-  <a
-    class="button button-secondary"
-    href="https://alektor.hatenablog.com/entry/2025/03/16/001631"
-    target="_blank"
-    rel="noopener noreferrer">
-    Build Guides
-  </a>
-
-</div>
-```
+    <p class="tagline">
+      日本語配列ユーザー向けの<br>
+      自作キーボードを設計・頒布しています。
+    </p>
 
   </section>
-
-  <hr class="divider">
-
-  <section class="statement">
-
-```
-<p>
-  自分が使いたいキーボードを形にしながら、
-  日本語配列ユーザーが選べるキーボードの
-  選択肢を増やしたいと考えています。
-</p>
-```
-
-  </section>
-
-  <hr class="divider">
 
   <section class="links">
 
-```
-<a
-  class="link-card"
-  href="https://x.com/alektor_diy"
-  target="_blank"
-  rel="noopener noreferrer">
-  X
-</a>
+    <a
+      href="https://alektor.booth.pm/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="button button-primary">
+      BOOTH
+    </a>
 
-<a
-  class="link-card"
-  href="https://github.com/alektor-diy"
-  target="_blank"
-  rel="noopener noreferrer">
-  GitHub
-</a>
+    <a
+      href="https://alektor.hatenablog.com/entry/2025/03/16/001631"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="button button-secondary">
+      ビルドガイド一覧
+    </a>
 
-<a
-  class="link-card"
-  href="https://alektor.hatenablog.com/"
-  target="_blank"
-  rel="noopener noreferrer">
-  Hatena Blog
-</a>
-```
+    <a
+      href="https://x.com/alektor_diy"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="link-button">
+      X（旧Twitter）
+    </a>
+
+    <a
+      href="https://alektor.hatenablog.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="link-button">
+      はてなブログ
+    </a>
+
+    <a
+      href="https://github.com/alektor-diy"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="link-button">
+      GitHub
+    </a>
+
+  </section>
+
+  <section class="brand">
+
+    <p>
+      自分が使いたいキーボードを形にしながら、日本語配列ユーザーの選択肢を増やしたいと考えています。
+    </p>
 
   </section>
 

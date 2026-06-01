@@ -24,7 +24,7 @@
   <meta property="og:site_name" content="A'sKey">
   <meta property="og:locale" content="ja_JP">
 
-  <!-- X(Twitter) -->
+  <!-- X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="アレくとーる | A'sKey">
   <meta name="twitter:description" content="日本語配列ユーザー向け自作キーボードの設計・頒布をしています。商品ページやビルドガイドはこちらから">
@@ -33,7 +33,9 @@
   <style>
 
     :root {
-      --bg: #fafaf8;
+      --bg: #f5f5f3;
+      --card: rgba(255,255,255,.92);
+
       --text: #222222;
       --muted: #666666;
       --border: #e7e7e7;
@@ -41,7 +43,8 @@
       --accent: #FFD000;
       --accent-hover: #E6BB00;
 
-      --radius: 14px;
+      --radius: 16px;
+      --card-radius: 28px;
     }
 
     * {
@@ -50,7 +53,10 @@
 
     body {
       margin: 0;
+      padding: 24px;
+
       background: var(--bg);
+
       color: var(--text);
 
       font-family: "IBM Plex Sans JP", sans-serif;
@@ -60,14 +66,21 @@
     }
 
     main {
-      max-width: 480px;
+      max-width: 560px;
 
       margin: 0 auto;
 
-      padding:
-        48px
-        24px
-        72px;
+      padding: 48px 32px 64px;
+
+      background: var(--card);
+
+      border: 1px solid rgba(0,0,0,.05);
+
+      border-radius: var(--card-radius);
+
+      box-shadow:
+        0 4px 12px rgba(0,0,0,.03),
+        0 16px 48px rgba(0,0,0,.08);
     }
 
     .hero {
@@ -90,6 +103,7 @@
 
       font-size: 2rem;
       font-weight: 700;
+
       line-height: 1.2;
     }
 
@@ -131,11 +145,13 @@
     .button-primary {
       background: var(--accent);
       color: #222222;
+
       padding: 18px 20px;
     }
 
     .button-primary:hover {
       background: var(--accent-hover);
+      transform: translateY(-1px);
     }
 
     .button-secondary {
@@ -148,6 +164,7 @@
 
     .button-secondary:hover {
       background: rgba(255, 208, 0, .08);
+      transform: translateY(-1px);
     }
 
     .link-button {
@@ -160,6 +177,7 @@
 
     .link-button:hover {
       border-color: var(--accent);
+      transform: translateY(-1px);
     }
 
     .brand {
@@ -168,30 +186,39 @@
       text-align: center;
     }
 
-    .brand img {
-      width: 80px;
-
-      opacity: .75;
-    }
-
     .brand p {
-      margin-top: 12px;
+      margin-top: 0;
 
       color: var(--muted);
 
       font-size: .95rem;
-
       line-height: 1.8;
     }
 
     footer {
-      margin-top: 16px;
+      margin-top: 20px;
 
       text-align: center;
 
       color: var(--muted);
 
       font-size: .85rem;
+    }
+
+    @media (max-width: 640px) {
+
+      body {
+        padding: 12px;
+      }
+
+      main {
+        padding: 40px 24px 56px;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+
     }
 
   </style>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alektor-diy.github.io/sitemap.xml

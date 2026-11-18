@@ -83,11 +83,19 @@ a:focus-visible {
 }
 
 .social-links > a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 3px 12px;
   padding: 15px 12px;
   min-height: 64px;
   border-bottom: 1px solid var(--line);
   font-size: 1rem;
   font-weight: 500;
+}
+
+.social-links .link-description {
+  grid-column: 1 / -1;
+  margin-top: 0;
 }
 
 @media (hover: hover) {
@@ -176,7 +184,7 @@ footer {
 @media (max-width: 360px) {
   .profile br { display: none; }
   .social-links { column-gap: 12px; }
-  .social-links > a { padding-inline: 8px; gap: 8px; }
+  .social-links > a { padding-inline: 8px; column-gap: 8px; }
 }
 
 @media (max-height: 700px) and (max-width: 600px) {
